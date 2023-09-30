@@ -1,0 +1,696 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f7f7f7;
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+}
+
+header {
+    width: 100%;
+    height: 75px;
+    padding: 1rem 2rem;
+    text-align: center;
+    background-color: #f4a261;
+}
+
+.searchbox {
+    margin-top: 3rem;
+    height: 100px;
+    text-align: center;
+}
+
+.searchbox input {
+    width: 337px;
+    height: 35px;
+    padding-right: 37px;
+}
+
+.searchbox i {
+    position: relative;
+    cursor: pointer;
+    color: #b4b4b4;
+    left: -2.5%;
+}
+
+.app-name {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #FFFFFF;
+}
+
+input[type="text"] {
+    border: 1px solid #ccc;
+    border-radius: 17px;
+    text-indent: 12px;
+}
+
+input[type="text"]:focus {
+    border: 1px solid #F4A261;
+    border-radius: 17px;
+    outline: none;
+    text-indent: 12px;
+}
+
+.addbook-btn {
+    position: absolute;
+    right: 6.5%;
+    padding: 7px 17px;
+    border-radius: 7px;
+    border: 1px solid #F4A261;
+    background-color: #F4A261;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.addbook-btn i {
+    margin-right: .5rem;
+}
+
+.addbook-btn:hover {
+    background-color: #f4a3613e;
+    color: #F4A261;
+    border-color: #f4a3613e;
+}
+
+main {
+    padding: 2rem 6rem;
+}
+
+.container {
+    margin-top: 3.5rem;    
+    width: 100%;
+    min-height: 300px;
+}
+
+#notFinished, #finished {
+    margin-bottom: 2rem;
+}
+
+.lists {
+    width: 100%;
+    height: 150px;
+    border-bottom: 0.5px solid #ccc;
+}
+
+.lists-flex {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 2rem 1rem;
+}
+
+.left-flex {
+    width: 7%;
+    height: 100%;
+}
+
+.middle-flex {
+    width: 85%;
+    height: 100%;
+    margin-right: 2rem;
+}
+
+.right-flex {
+    width: 10%;
+    height: 100%;
+}
+
+.sub-title {
+    font-size: 16px;
+}
+
+.book-img {
+    width: 50px;
+    height: 110px;
+    border-radius: 4px;
+}
+
+#readingList1 {
+    background-color: #633415;
+}
+
+#readingList2 {
+    background-color: #741313;
+}
+
+#completeList1 {
+    background-color: #133681;
+}
+
+.title, .author {
+    width: 100%;
+    overflow: auto;
+    word-wrap: break-word;
+    padding: 0.2rem 0.3rem;
+    color: #ffebcd;
+}
+
+.title {
+    height: 75%;
+    font-size: 10px;
+    overflow: hidden;
+}
+
+.author {
+    height: 25%;
+    font-size: 8px;
+}
+
+.title-book {
+    font-weight: 700;
+    font-size: 14px;
+    padding-bottom: 0.4rem;
+}
+
+.author-book {
+    font-size: 12px;
+    padding-bottom: 0.4rem;
+}
+
+.year-book {
+    font-size: 10px;
+}
+
+.fa-check-circle, .fa-trash-alt {
+    color: #b4b4b4;
+    font-size: 20px;  
+    cursor: pointer; 
+    padding: 1rem;
+}
+
+.fa-check-circle {
+    padding: 0.5rem 1rem;
+}
+
+.fa-check-circle:hover {
+    color: #8A2BE2;
+}
+
+.fa-trash-alt {
+    padding: 0.5rem 0 0 1rem;
+}
+
+.fa-trash-alt:hover {
+    color: #cf0000;
+}
+
+.uncomplete {
+    background-color: #f4a261;
+    border: 1px solid #f4a261;
+}
+
+.uncomplete:hover {
+    background-color: #f4a3613e;
+    color: #F4A261;
+    border: 1px solid #f4a3613e;
+}
+
+.completed {
+    background-color: #264653;
+    border: 1px solid #264653;
+}
+
+.completed:hover {
+    background-color: #26465343;
+    color: #264653;
+    border: 1px solid #26465343;
+
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    margin-top: 2rem;
+    width: 100%;
+    height: 170px;
+    background-color: #ececec;
+    padding: 2.8rem 6rem;
+}
+
+.app-desc-wrap {
+    line-height: 25px;
+}
+
+.app-desc {
+    font-size: 18px;
+}
+
+.sub-desc {
+    padding-top: 0.7rem;
+    font-size: 14px;
+}
+
+.dicoding {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 2px solid #f4a261;
+    cursor: pointer;
+}
+
+/* overlay css */
+#bgOverlay {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);
+}
+
+.form-overlay {
+    padding: 2.5rem;
+    z-index: 999;
+    background-color: #fff;
+    border-radius: 17px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#formOverlay {
+    display: none;
+    position: absolute;
+    width: 50%;
+    height: 450px;
+}
+
+#customDialog {
+    display: none;
+    position: absolute;
+    width: 25%;
+    height: 200px;
+}
+
+.overlay-title {
+    font-size: 16px;
+}
+
+.content {
+    width: 100%;
+    height: 80%;
+    text-align: center;
+    margin: auto;
+}
+
+.content-title {
+    font-size: 16px;
+}
+
+#bookName {
+    font-size: 14px;
+    padding: 1rem;
+}
+
+.fa-times {
+    position: absolute;
+    top: 4%;
+    right: 0;
+    font-size: 22px;
+    color: #b4b4b4;
+    cursor: pointer;
+    padding: 1.1rem 2.5rem;
+}
+
+.fa-times:hover {
+    color: #F4A261;
+}
+
+.form-container {
+    margin-top: 2rem;
+}
+
+.form-container input {
+    margin-top: .5rem;
+}
+
+#inputTitle, #inputAuthor {
+    width: 100%;
+    height: 35px;
+}
+
+#inputYear {
+    width: 55px;
+    height: 35px;
+}
+
+#inputYear, #inputTitle, #inputAuthor {
+    margin-bottom: .5rem;
+}
+
+.addTo-readList {
+    padding: 9px 25px;
+    border: 1px solid #F4A261;
+    border-radius: 7px;
+    background-color: #F4A261;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    position: absolute;
+    bottom: 9%;
+    right: 4.7%;
+}
+
+.addTo-readList:hover {
+    background-color: #f4a3613e;
+    color: #F4A261;
+    border-color: #f4a3613e;
+}
+
+#inputStatus {
+    cursor: pointer;
+    font-size: 12px;
+}
+
+label {
+    font-size: 12px;
+}
+
+.group-btn {
+    display: flex;
+    width: 100%;
+    height: 27%;
+    justify-content: space-between;
+}
+
+.group-btn1 {
+    width: 45%;
+    height: 100%;
+}
+
+.group-btn2 {
+    width: 45%;
+    height: 100%;
+}
+
+.yes, .no {
+   width: 100%;
+   height: 100%;
+   border: none;
+   cursor: pointer;
+}
+
+.yes {
+    background-color: #f4a261;
+    color: #fff;
+    border-radius: 7px; 
+    border: 1px solid #f4a261;
+}
+
+.yes:hover {
+    background-color: #f4a3613e;
+    color: #f4a261;
+}
+
+.no {
+   border-radius: 7px; 
+   border: 1px solid #ccc;
+}
+
+.no:hover {
+    background-color: #bdbdbd75;
+}
+
+#mobileBrand {
+    display: none;
+}
+
+#Brand {
+    display: block;
+}
+
+/* v2 */
+.reading-list-wrapper {
+    margin-bottom: 2rem;
+}
+
+.area-title {
+    font-size: 16px;
+    margin-bottom: 1rem;
+}
+
+.read-lists-area {
+    display: flex;
+    min-width: 161px;
+    min-height: 230px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 1.2rem;
+}
+
+.card-info {
+    margin-top: 1rem;
+    line-height: 24px;
+    align-self: baseline;
+}
+
+.card-title {
+    font-weight: 700;
+}
+
+.card-author {
+    font-size: 12px;
+}
+
+.card-year {
+    font-size: 10px;
+}
+
+.card-list {
+    display: flex;
+    position: relative;
+    width: 410px;
+    height: inherit;
+    background-color: #FFFFFF;
+    padding: 1.2rem 1.2rem;
+    border-radius: 10px;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    box-sizing: border-box;
+    border: 1px solid #f0f0f0;
+}
+
+.card-list:not(:nth-child(3n+3)) {
+    margin-right: 3rem;
+}
+
+.book-display {
+    align-self: center;
+    width: 125px;
+    height: 175px;
+    background-color: #2a9d8f;
+    border-radius: 10px;
+    margin-right: 1rem;
+
+}
+
+.book-info {
+    position: relative;
+    padding: 1rem;
+    height: 100%;
+}
+
+.book-title {
+    color: #FFFFFF;
+}
+
+.book-year {
+    color: #FFFFFF;
+    font-size: 12px;
+    margin-top: .3rem;
+}
+
+.book-author {
+    position: absolute;
+    bottom: 0;
+    font-size: 9px;
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+}
+
+.button-wrapper {
+    position: absolute;
+    bottom: 14%;
+}
+
+.button-wrapper button {
+    display: inline;
+}
+
+.done-read-btn, .remove-btn {
+    text-align: center;
+    border-radius: 7px;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+.done-read-btn i {
+    margin-right: .5rem;
+}
+
+.done-read-btn {
+    padding: .5rem 1rem;
+    margin-bottom: .5rem;
+    margin-right: .3rem;
+}
+
+.remove-btn {
+    padding: .5rem .7rem;
+    background-color: #e76f51;
+    border: 1px solid #e76f51;
+}
+
+.remove-btn:hover {
+    background-color: #e76f5150;
+    color: #e76f51;
+    border-color: #e76f5150;
+}
+
+.hovered-book {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    top: 0;
+    background-color: #252525b1;
+    padding: 0 1rem;
+}
+
+/* * media queries area for responsiveness */ 
+/* for laptop or desktop */
+@media (min-width: 1025px) and (max-width: 1280px) {
+    main {
+        padding: 1rem 3rem;
+    }
+    
+    .addbook-btn {
+        right: 0;
+        padding: 7px 17px;
+        font-size: 12px;
+    }
+
+    .searchbox i {
+        left: -3.2%;
+    }
+}
+
+/* for tablets or ipads */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    main {
+        padding: 1rem 3rem;
+    }
+    
+    .sub-title {
+        font-size: 14px;
+    }    
+    
+    .app-desc {
+        font-size: 14px;
+    }
+    
+    .sub-desc {
+        font-size: 12px;
+    }
+    
+    .overlay-title {
+        font-size: 14px;
+    }
+    
+    .fa-times {
+        font-size: 20px;
+    }
+    
+    label {
+        font-size: 12px;
+    }
+    
+    #formOverlay {
+        width: 75%;
+    }
+    
+    .content-title {
+        font-size: 14px;
+    }
+
+    .searchbox i {
+        left: -3.8%;
+    }
+}
+
+/* for mobile */
+@media (min-width: 481px) and (max-width: 767px) {
+
+    main {
+        padding: 1rem 2rem;
+    }
+
+    .addbook-btn {
+        font-size: 10px;
+    }
+    
+    .sub-title {
+        font-size: 14px;
+    }    
+    
+    .app-desc {
+        font-size: 14px;
+    }
+    
+    .sub-desc {
+        font-size: 12px;
+    }
+    
+    .overlay-title {
+        font-size: 14px;
+    }
+    
+    .fa-times {
+        font-size: 20px;
+    }
+    
+    label {
+        font-size: 10px;
+    }
+    
+    #formOverlay {
+        width: 75%;
+    }
+    
+    #customDialog {
+        width: 50%;
+    }
+    
+    .content-title {
+        font-size: 14px;
+    }
+
+    .searchbox i {
+        left: -6.6%;
+    }
+
+    .read-lists-area {
+        flex-direction: column;
+    }
+
+    .card-list:not(:nth-child(3n+3)){
+        margin-right: 0;
+    }
+}
